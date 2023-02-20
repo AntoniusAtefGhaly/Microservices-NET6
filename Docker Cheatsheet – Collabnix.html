@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://collabnix.com/docker-cheatsheet/ -->
+<html lang="en-GB" class=" js csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="pingback" href="https://collabnix.com/xmlrpc.php">
+   
+<title>Docker Cheatsheet – Collabnix</title>
+<meta name="robots" content="max-image-preview:large">
+<script type="text/javascript" async="" src="./Docker Cheatsheet – Collabnix_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-BV3s7GUfZmQoCIeDGjziAdN7XaXIsvdr5vFHzcjc0OWrVIEdrNeQuwqNeGmL4mWq"></script><script>                function apbct_attach_event_handler__backend(elem, event, callback) {                    if(typeof window.addEventListener === "function") elem.addEventListener(event, callback);                    else                                                elem.attachEvent(event, callback);                }                apbct_attach_event_handler__backend(document, 'DOMContentLoaded', function(){                    if (typeof apbctLocalStorage === "object") {                        apbctLocalStorage.set('ct_checkjs', '627334896', true );                    } else {                        console.log('APBCT ERROR: apbctLocalStorage object is not loaded.');                    }                  });    </script><meta name="description" content="A cheat sheet is a concise summary of important information that is meant to be used as a quick reference. Cheatsheets are often used in the form of a list or a table, and they typically cover a specific topic or subject area. In the context of Docker, a Docker cheatsheet is a summary of […]">
+<link rel="dns-prefetch" href="https://www.google.com/">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="alternate" type="application/rss+xml" title="Collabnix » Feed" href="https://collabnix.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Collabnix » Comments Feed" href="https://collabnix.com/comments/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/collabnix.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script><script src="./Docker Cheatsheet – Collabnix_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="my-styles-toc-css" href="./Docker Cheatsheet – Collabnix_files/my-styles-toc.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./Docker Cheatsheet – Collabnix_files/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:"0 0 1em 0"}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}
+</style>
+<link rel="stylesheet" id="themezee-magazine-blocks-css" href="./Docker Cheatsheet – Collabnix_files/themezee-magazine-blocks.css" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="./Docker Cheatsheet – Collabnix_files/classic-themes.min.css" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="ct_public_css-css" href="./Docker Cheatsheet – Collabnix_files/cleantalk-public.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./Docker Cheatsheet – Collabnix_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="display-medium-posts-css" href="./Docker Cheatsheet – Collabnix_files/display-medium-posts-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="ace-owl-carousel-css" href="./Docker Cheatsheet – Collabnix_files/owl.carousel.css" type="text/css" media="all">
+<link rel="stylesheet" id="ace-owl-theme-css" href="./Docker Cheatsheet – Collabnix_files/owl.theme.css" type="text/css" media="all">
+<link rel="stylesheet" id="email-subscribers-css" href="./Docker Cheatsheet – Collabnix_files/email-subscribers-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./Docker Cheatsheet – Collabnix_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="post-views-counter-frontend-css" href="./Docker Cheatsheet – Collabnix_files/frontend.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="SFSImainCss-css" href="./Docker Cheatsheet – Collabnix_files/sfsi-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap4-css" href="./Docker Cheatsheet – Collabnix_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="./Docker Cheatsheet – Collabnix_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="mediumish-style-css" href="./Docker Cheatsheet – Collabnix_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="a0d4e2dc8fedffc1f32aef64fdab6532-css" href="./Docker Cheatsheet – Collabnix_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="50a13ad9a4c45e05454875855874ccb7-css" href="./Docker Cheatsheet – Collabnix_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="c8575e414cefc58fef4c19cc29b9a938-css" href="./Docker Cheatsheet – Collabnix_files/css(2)" type="text/css" media="all">
+<link rel="stylesheet" id="1f3024ccaab2a997012f095d6873946e-css" href="./Docker Cheatsheet – Collabnix_files/css(3)" type="text/css" media="all">
+<link rel="stylesheet" id="f5bc3b56cb236f484d9a38537bb413b1-css" href="./Docker Cheatsheet – Collabnix_files/css(4)" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="./Docker Cheatsheet – Collabnix_files/elementor-icons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-legacy-css" href="./Docker Cheatsheet – Collabnix_files/frontend-legacy.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="./Docker Cheatsheet – Collabnix_files/frontend.min(1).css" type="text/css" media="all">
+<style id="elementor-frontend-inline-css" type="text/css">
+.elementor-kit-7716{--e-global-color-primary:#6EC1E4;--e-global-color-secondary:#54595F;--e-global-color-text:#7A7A7A;--e-global-color-accent:#61CE70;--e-global-color-50b0cd0e:#4054B2;--e-global-color-6e500cda:#23A455;--e-global-color-d8449bf:#000;--e-global-color-33e94e06:#FFF;--e-global-typography-primary-font-family:"Roboto";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Roboto Slab";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Roboto";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Roboto";--e-global-typography-accent-font-weight:500;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}{}h1.entry-title{display:var(--page-title-display);}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}
+.elementor-9655 .elementor-element.elementor-element-d22b2c6 .elementor-button{fill:var( --e-global-color-33e94e06 );color:var( --e-global-color-33e94e06 );background-color:var( --e-global-color-primary );}.elementor-9655 .elementor-element.elementor-element-4d668b5 .elementor-button{fill:var( --e-global-color-33e94e06 );color:var( --e-global-color-33e94e06 );background-color:var( --e-global-color-primary );}.elementor-9655 .elementor-element.elementor-element-04bf75c{column-gap:61px;}body:not(.rtl) .elementor-9655 .elementor-element.elementor-element-04bf75c .elementor-drop-cap{margin-right:10px;}body.rtl .elementor-9655 .elementor-element.elementor-element-04bf75c .elementor-drop-cap{margin-left:10px;}.elementor-9655 .elementor-element.elementor-element-04bf75c > .elementor-widget-container{border-style:solid;}
+</style>
+<link rel="stylesheet" id="font-awesome-5-all-css" href="./Docker Cheatsheet – Collabnix_files/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-4-shim-css" href="./Docker Cheatsheet – Collabnix_files/v4-shims.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="mediumish_no-kirki-css" href="./Docker Cheatsheet – Collabnix_files/style(1).css" type="text/css" media="all">
+<style id="mediumish_no-kirki-inline-css" type="text/css">
+.btn-simple{background-color:#1C9963;border-color:#1C9963;}.article-post a:not(.wp-block-button__link), .post .btn.follow, .post .post-top-meta .author-description a, article.page a:not(.wp-block-button__link), .alertbar a{color:#1C9963;}.post .btn.follow, .alertbar input[type="submit"]{border-color:#1C9963;}blockquote{border-color:#1C9963;}.entry-content input[type=submit], .alertbar input[type="submit"]{background-color:#1C9963;border-color:#1C9963;}p.sharecolour{color:#999999;}.shareitnow ul li a svg, .shareitnow a{fill:#b3b3b3;}.shareitnow li a{color:#b3b3b3;border-color:#d2d2d2;}#comments a{color:#1C9963;}.comment-form input.submit{background-color:#1C9963;border-color:#1C9963;}footer.footer a{color:#1C9963;}body{font-family:PT Sans;font-weight:400;font-size:15px;line-height:1.5;color:#5f636d;}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-family:PT Sans;font-weight:700;color:#222;}.carousel-excerpt .title{font-family:;font-weight:700;font-size:1.5em;line-height:1.2;color:#ffffff;text-transform:none;letter-spacing:0;}.carousel-excerpt .fontlight{font-family:;font-weight:400;font-size:18px;line-height:1.4;color:#ffffff;letter-spacing:0;}.mediumnavigation .navbar-brand{font-family:DM Serif Display;font-weight:400;font-size:30px;letter-spacing:0;}.navbar .nav-link{font-family:Source Sans Pro;font-size:15px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;}.article-post{font-family:Merriweather;line-height:1.8;color:#222222;font-size:1.2em;}.mainheading h1.posttitle, h1.entry-title{font-family:;line-height:1.1;color:#222222;font-size:3.4em;}.entry-content.page-content{font-family:;line-height:1.7;color:;font-size:1.2em;}.mediumnavigation, .dropdown-menu, .dropdown-item{background-color:rgba(255,255,255,.97);}.mediumnavigation, .mediumnavigation a, .navbar-light .navbar-nav .nav-link{color:#888;}.navbar-light .navbar-brand{color:#111111;}.navbar-light .navbar-brand:hover{color:#02b875;}.customarea .btn.follow{border-color:#02B875;color:#02B875;}.search-form .search-submit{background-color:#02B875;}.search-form .search-field{border-color:#eeeeee;}.search-form .search-submit .fa{color:#ffffff;}.search-form .search-field, .search-form .search-field::placeholder{color:#b2b2b2;}@media (max-width: 767px){.navbar-collapse{background-color:rgba(255,255,255,.97);}}
+</style>
+<link rel="stylesheet" id="claps-applause-css" href="./Docker Cheatsheet – Collabnix_files/claps-applause.css" type="text/css" media="all">
+<link rel="stylesheet" id="fpsml-style-css" href="./Docker Cheatsheet – Collabnix_files/fpsml-frontend-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="fpsml-fonts-css" href="./Docker Cheatsheet – Collabnix_files/stylesheet.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="./Docker Cheatsheet – Collabnix_files/css(5)" type="text/css" media="all">
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/jquery.min.js.download" id="jquery-core-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/jquery-migrate.min.js.download" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="ct_public_functions-js-extra">
+/* <![CDATA[ */
+var ctPublicFunctions = {"_ajax_nonce":"ac4d5b284d","_rest_nonce":"64cd2709cd","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/collabnix.com\/wp-json\/","data__cookies_type":"alternative","data__ajax_type":"rest","text__wait_for_decoding":"Decoding the contact data, let us a few seconds to finish. Anti-Spam by CleanTalk.","cookiePrefix":""};
+var ctPublic = {"settings__forms__check_internal":"0","settings__forms__check_external":"0","blog_home":"https:\/\/collabnix.com\/","pixel__setting":"3","pixel__enabled":"","pixel__url":"https:\/\/moderate4.cleantalk.org\/pixel\/836cab3b9fc76deebe06c541b8d1d2c1.gif","data__email_check_before_post":"1","data__cookies_type":"alternative","data__visible_fields_required":"1","data__to_local_storage":[]};
+/* ]]> */
+</script>
+<script type="text/javascript" data-pagespeed-no-defer="" src="./Docker Cheatsheet – Collabnix_files/apbct-public-bundle.min.js.download" id="ct_public_functions-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/owl.carousel.js.download" id="ace-owl-carousel-js-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/v4-shims.min.js.download" id="font-awesome-4-shim-js"></script>
+<link rel="https://api.w.org/" href="https://collabnix.com/wp-json/"><link rel="alternate" type="application/json" href="https://collabnix.com/wp-json/wp/v2/pages/9655"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://collabnix.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://collabnix.com/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="canonical" href="https://collabnix.com/docker-cheatsheet/">
+<link rel="shortlink" href="https://collabnix.com/?p=9655">
+<link rel="alternate" type="application/json+oembed" href="https://collabnix.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcollabnix.com%2Fdocker-cheatsheet%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://collabnix.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcollabnix.com%2Fdocker-cheatsheet%2F&amp;format=xml">
+            <!-- auto ad code generated with Easy Google AdSense plugin v1.0.6 -->
+            <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6221532852698386" crossorigin="anonymous"></script>      
+            <!-- / Easy Google AdSense plugin --><meta name="follow.it-verification-code-ZXdWelo0V1BUNmJ1Wk4vSHlkM0lDajBKZlp3QzBhaytGL0dQQnZ0M2JVdE42aWpWN2lvREdMekJLa1FmRXRGK3FRRi9QdS8renl6T1NIeUFjYWlvdCs1bysxMEZrajlZZ1gxY3IrWWNHNmgzQTNBcnpUZEVUMko4VWx5NCt0L1h8bDJyYUw0NlExZFQrMzdFZEpTQ1ZqMzNEbS96ZWJmTUltTS8zb0E5cEJ0TT0=" content="Dwqr4NmABhKJyFKFJY86">		<script>
+			document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+		</script>
+				<style>
+			.no-js img.lazyload { display: none; }
+			figure.wp-block-image img.lazyloading { min-width: 150px; }
+							.lazyload, .lazyloading { opacity: 0; }
+				.lazyloaded {
+					opacity: 1;
+					transition: opacity 400ms;
+					transition-delay: 0ms;
+				}
+					</style>
+		<link rel="icon" href="https://collabnix.com/wp-content/uploads/2020/09/cropped-cropped-cropped-cropped-collabnix_logo-1-3-32x32.png" sizes="32x32">
+<link rel="icon" href="https://collabnix.com/wp-content/uploads/2020/09/cropped-cropped-cropped-cropped-collabnix_logo-1-3-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://collabnix.com/wp-content/uploads/2020/09/cropped-cropped-cropped-cropped-collabnix_logo-1-3-180x180.png">
+<meta name="msapplication-TileImage" content="https://collabnix.com/wp-content/uploads/2020/09/cropped-cropped-cropped-cropped-collabnix_logo-1-3-270x270.png">
+		<style type="text/css" id="wp-custom-css">
+			body {
+    font-size: 15px;
+}		</style>
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"></head> 
+    
+<body data-rsssl="1" class="page-template-default page page-id-9655 wp-custom-logo wp-embed-responsive sfsi_actvite_theme_default elementor-default elementor-kit-7716 elementor-page elementor-page-9655 sfsi_2.77 e--ua-blink e--ua-chrome e--ua-webkit dialog-body dialog-lightbox-body dialog-container dialog-lightbox-container" data-elementor-device-mode="desktop" cz-shortcut-listen="true"> 
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 0.49803921568627"></fefuncr><fefuncg type="table" tableValues="0 0.49803921568627"></fefuncg><fefuncb type="table" tableValues="0 0.49803921568627"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 1"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0 1"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.54901960784314 0.98823529411765"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0.71764705882353 0.25490196078431"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 1"></fefuncr><fefuncg type="table" tableValues="0 0.27843137254902"></fefuncg><fefuncb type="table" tableValues="0.5921568627451 0.27843137254902"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 0"></fefuncr><fefuncg type="table" tableValues="0 0.64705882352941"></fefuncg><fefuncb type="table" tableValues="0 1"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.78039215686275 1"></fefuncr><fefuncg type="table" tableValues="0 0.94901960784314"></fefuncg><fefuncb type="table" tableValues="0.35294117647059 0.47058823529412"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.65098039215686 0.40392156862745"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0.44705882352941 0.4"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.098039215686275 1"></fefuncr><fefuncg type="table" tableValues="0 0.66274509803922"></fefuncg><fefuncb type="table" tableValues="0.84705882352941 0.41960784313725"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg>        
+<style>
+    </style>
+
+        
+<header class="navbar-light bg-white fixed-top mediumnavigation nav-up" style="top: -53px;">
+
+    <div class="container">
+
+        <!-- Begin Logo --> 
+        <div class="row justify-content-center align-items-center brandrow">
+            
+            <div class="col-lg-4 col-md-4 col-xs-12 hidden-xs-down customarea">
+
+                            <a class="btn follow" href="https://twitter.com/ajeetraina" target="blank"><i class="fa fa-twitter"></i> Follow</a>
+            
+
+                            <a target="_blank" href="https://www.youtube.com/c/Collabnix"> <i class="fa fa-youtube social"></i></a>
+                            <a target="_blank" href="https://github.com/collabnix"> <i class="fa fa-github social"></i></a>
+                            <a target="_blank" href="https://launchpass.com/collabnix"> <i class="fa fa-slack social"></i></a>
+            
+            </div>
+
+            <div class="col-lg-4 col-md-4  col-xs-12 text-center logoarea">
+                                     <a class="navbar-brand" href="https://collabnix.com/">Collabnix</a>
+                            </div>
+
+            <div class="col-lg-4 col-md-4 mr-auto col-xs-12 text-right searcharea">
+                                        
+                        <form role="search" method="get" class="search-form" action="https://collabnix.com/">
+<input type="hidden" name="post_type" value="post">
+<input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search for:">
+<button type="submit" class="search-submit">
+<i class="fa fa-search"></i>   
+</button>
+<input id="apbct_submit_id__search_form_55474" class="apbct_special_field apbct__email_id__search_form" name="apbct_submit_id__search_form_55474" type="submit" apbct_event_id="55474" size="30" maxlength="200" value=""></form>                        
+                            </div>
+                    
+        </div>
+        <!-- End Logo --> 
+
+        <div class="navarea">
+       
+        <nav class="navbar navbar-toggleable-sm">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation"> 
+                <span class="navbar-toggler-icon"></span> 
+            </button>  
+                <div id="bs4navbar" class="collapse navbar-collapse"><ul id="menu-primary-old" class="navbar-nav col-md-12 justify-content-center"><li id="menu-item-7584" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7584 nav-item"><a href="https://collabnix.com/" class="nav-link">Home</a></li><li id="menu-item-9144" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9144 nav-item dropdown"><a href="https://www.youtube.com/c/Collabnix" class="nav-link dropdown-toggle">Events</a>
+<div class="dropdown-menu">
+<a href="https://www.youtube.com/watch?v=Tlce19gYY9Q" class="dropdown-item">OSCONF 2022</a><a href="https://www.youtube.com/playlist?list=PLTUnKbSYLzw2VOPZRiPFJK1u0tw442lKS" class="dropdown-item">OSCONF 2021</a><a href="https://www.youtube.com/c/Collabnix/playlists" class="dropdown-item">OSCONF 2020</a></div>
+</li><li id="menu-item-9203" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-9203 nav-item dropdown"><a href="https://community.collabnix.com/" class="nav-link dropdown-toggle">Cheatsheets</a>
+<div class="dropdown-menu">
+<a href="https://collabnix.com/docker-cheatsheet/" class="dropdown-item active">Docker</a><a href="https://collabnix.com/kubectl-cheatsheet/" class="dropdown-item">Kubectl</a><a href="https://collabnix.com/terraform/" class="dropdown-item">Terraform</a><a href="https://collabnix.com/chatgpt-cheat-sheet/" class="dropdown-item">ChatGPT Cheat Sheet</a></div>
+</li><li id="menu-item-9176" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9176 nav-item dropdown"><a href="https://dockerlabs.collabnix.com/" class="nav-link dropdown-toggle">Labs</a>
+<div class="dropdown-menu">
+<a href="https://kubelabs.collabnix.com/" class="dropdown-item">KubeLabs</a><a href="https://dockerlabs.collabnix.com/" class="dropdown-item">DockerLabs</a><a href="https://terraform.collabnix.com/" class="dropdown-item">Terraform Labs</a><a href="https://github.com/collabnix/ioetplanet/blob/master/docs/raspberrypi/getting-started.md" class="dropdown-item">Raspberry Pi</a><a href="https://github.com/collabnix/ioetplanet/blob/master/docs/nvidia/getting-started.md" class="dropdown-item">Jetson Nano</a><a href="https://github.com/collabnix/ioetplanet/blob/master/docs/nvidia/jetson-xavier.md" class="dropdown-item">Jetson AGX Xavier</a></div>
+</li><li id="menu-item-9181" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9181 nav-item dropdown"><a href="https://github.com/collabnix" class="nav-link dropdown-toggle">Tools</a>
+<div class="dropdown-menu">
+<a href="https://github.com/collabnix/wasm-docker-better-together" class="dropdown-item">Wasm</a><a href="https://dockertools.collabnix.com/" class="dropdown-item">Docker</a><a href="https://github.com/collabnix/docker-community-extensions" class="dropdown-item">Docker Extensions</a><a href="https://kubetools.collabnix.com/" class="dropdown-item">Kubernetes</a></div>
+</li><li id="menu-item-9140" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9140 nav-item dropdown"><a href="https://launchpass.com/collabnix" class="nav-link dropdown-toggle">Chat</a>
+<div class="dropdown-menu">
+<a href="https://launchpass.com/collabnix" class="dropdown-item">Slack</a><a href="https://discord.gg/ztZpXzjSmF" class="dropdown-item">Discord</a></div>
+</li><li id="menu-item-18066" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18066 nav-item"><a href="https://collabnix.com/write-for-us/" class="nav-link">Write for Us!</a></li></ul></div>        </nav>
+        
+        </div>
+            
+    </div>
+
+</header>
+        
+       
+        <!-- Begin site-content
+		================================================== -->         
+        <div class="site-content" style="margin-top: 116.875px;">
+<div class="container"> 
+    <div class="section-title"> 
+            <h2>
+                <span>Docker Cheatsheet</span>
+            </h2> 
+        </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-md-12">
+							<article id="post-9655" class="post-9655 page type-page status-publish hentry">                    
+                    <div class="entry-content page-content">
+                        		<div data-elementor-type="wp-page" data-elementor-id="9655" class="elementor elementor-9655">
+						<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+									<section class="elementor-section elementor-top-section elementor-element elementor-element-fd6ac85 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="fd6ac85" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3d6fead" data-id="3d6fead" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-9760643 elementor-widget elementor-widget-image" data-id="9760643" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="1024" height="576" alt="" data-srcset="https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-1024x576.png 1024w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-300x169.png 300w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-768x432.png 768w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-1536x864.png 1536w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1.png 1920w" data-src="https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-1024x576.png" data-sizes="(max-width: 1024px) 100vw, 1024px" class="attachment-large size-large lazyloaded" src="./Docker Cheatsheet – Collabnix_files/docker_cheatsheet-1-1024x576.png" sizes="(max-width: 1024px) 100vw, 1024px" srcset="https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-1024x576.png 1024w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-300x169.png 300w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-768x432.png 768w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-1536x864.png 1536w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1.png 1920w"><noscript><img decoding="async" width="1024" height="576" src="https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-1024x576.png" class="attachment-large size-large" alt="" srcset="https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-1024x576.png 1024w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-300x169.png 300w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-768x432.png 768w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1-1536x864.png 1536w, https://collabnix.com/wp-content/uploads/2022/12/docker_cheatsheet-1.png 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript>														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-91df236 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="91df236" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-943858f" data-id="943858f" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-a24f667 elementor-widget elementor-widget-text-editor" data-id="a24f667" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p style="margin-bottom: 1em; color: #606c71; font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; font-size: 16.5px;">A cheat sheet is a concise summary of important information that is meant to be used as a quick reference. Cheatsheets are often used in the form of a list or a table, and they typically cover a specific topic or subject area. In the context of Docker, a Docker cheatsheet is a summary of commonly used Docker commands and their options and other useful information related to Docker.</p>
+<p style="margin-bottom: 1em; color: #606c71; font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; font-size: 16.5px;">Cheatsheets can be particularly helpful when learning a new tool or technology, as they provide a convenient way to quickly look up and remind oneself of key concepts and commands. They can also be useful for experienced users who need to recall a specific command or option but may not remember all the details.</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-3a95d27 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3a95d27" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4b292ee" data-id="4b292ee" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-d22b2c6 elementor-align-center elementor-widget elementor-widget-button" data-id="d22b2c6" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="https://collabnix.com/docker-cheatsheet/#" class="elementor-button-link elementor-button elementor-size-lg" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">Join Collabnix Slack</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-14737ec" data-id="14737ec" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4d668b5 elementor-align-center elementor-widget elementor-widget-button" data-id="4d668b5" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="http://twitter.com/collabnix" class="elementor-button-link elementor-button elementor-size-lg" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">Follow us on Twitter</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ce61a0b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ce61a0b" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e086679" data-id="e086679" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-04bf75c elementor-drop-cap-yes elementor-drop-cap-view-default elementor-widget elementor-widget-text-editor animated zoomIn" data-id="04bf75c" data-element_type="widget" data-settings="{&quot;drop_cap&quot;:&quot;yes&quot;,&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><!-- wp:heading --></p>
+<figure><a href="./Docker Cheatsheet – Collabnix_files/dockercheatsheet1.png" target="_blank" rel="noreferrer noopener"><img decoding="async" alt="container_management" width="827" height="583" data-src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet1.png" class=" ls-is-cached lazyloaded" src="./Docker Cheatsheet – Collabnix_files/dockercheatsheet1.png"><noscript><img decoding="async" src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet1.png" alt="container_management" width="827" height="583"></noscript></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2 id="">&nbsp;</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"linkDestination":"custom"} --></p>
+<figure><a href="./Docker Cheatsheet – Collabnix_files/dockercheatsheet3.png" target="_blank" rel="noreferrer noopener"><img decoding="async" alt="Inspecting The Container" data-src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet3.png" class=" ls-is-cached lazyloaded" src="./Docker Cheatsheet – Collabnix_files/dockercheatsheet3.png"><noscript><img decoding="async" src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet3.png" alt="Inspecting The Container"></noscript></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2 id="">&nbsp;</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"linkDestination":"custom"} --></p>
+<figure><a href="./Docker Cheatsheet – Collabnix_files/dockercheatsheet4.png" target="_blank" rel="noreferrer noopener"><img decoding="async" alt="Interacting with Container1" data-src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet4.png" class=" ls-is-cached lazyloaded" src="./Docker Cheatsheet – Collabnix_files/dockercheatsheet4.png"><noscript><img decoding="async" src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet4.png" alt="Interacting with Container1"></noscript></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2 id="">&nbsp;</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"linkDestination":"custom"} --></p>
+<figure><a href="./Docker Cheatsheet – Collabnix_files/dockercheatsheet5.png" target="_blank" rel="noreferrer noopener"><img decoding="async" alt="image management commands" data-src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet5.png" class=" ls-is-cached lazyloaded" src="./Docker Cheatsheet – Collabnix_files/dockercheatsheet5.png"><noscript><img decoding="async" src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet5.png" alt="image management commands"></noscript></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2 id="">&nbsp;</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"linkDestination":"custom"} --></p>
+<figure><a href="./Docker Cheatsheet – Collabnix_files/dockercheatsheet6.png" target="_blank" rel="noreferrer noopener"><img decoding="async" alt="Image Transfer Comnands" data-src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet6.png" class=" ls-is-cached lazyloaded" src="./Docker Cheatsheet – Collabnix_files/dockercheatsheet6.png"><noscript><img decoding="async" src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet6.png" alt="Image Transfer Comnands"></noscript></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading --></p>
+<h2 id="">&nbsp;</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:image {"linkDestination":"custom"} --></p>
+<figure><a href="./Docker Cheatsheet – Collabnix_files/dockercheatsheet7.png" target="_blank" rel="noreferrer noopener"><img decoding="async" alt="Builder Main Commands" data-src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet7.png" class=" ls-is-cached lazyloaded" src="./Docker Cheatsheet – Collabnix_files/dockercheatsheet7.png"><noscript><img decoding="async" src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet7.png" alt="Builder Main Commands"></noscript></a></figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:heading {"level":1} --></p>
+<h2 id="the-docker-cli">The Docker CLI</h2>
+<h3 id="1-manage-docker-images">1. Manage Docker Images</h3>
+<p>Build a Docker Image:&nbsp;</p>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<p>Command: <code>docker build</code></p>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:tadv/classic-paragraph /--></p>
+<p><!-- wp:tadv/classic-paragraph --></p>
+<table style="border-collapse: collapse; width: 100%;">
+<tbody>
+<tr>
+<td style="width: 100%;">
+<pre style="text-align: left;"><span style="font-family: terminal, monaco, monospace; font-size: 16px;">docker build [options] .</span></pre>
+<p></p>
+<p><span style="font-family: terminal, monaco, monospace; font-size: 16px;">-t “app/container_name” # name</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><!-- /wp:tadv/classic-paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Description: Create an&nbsp;<code>image</code>&nbsp;from a Dockerfile.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="">&nbsp;</h3>
+<div>
+<h3 id="2-run-a-docker-container"><b>2. Run a Docker Container:</b></h3>
+<p><span style="font-size: 1.2em;">Run a command in an&nbsp;</span><code>image</code><span style="font-size: 1.2em;">.</span></p>
+<p>Command: <code>docker run</code></p>
+</div>
+<table style="background-color: #ffffff; width: 1090px; color: #5f636d; white-space: normal;">
+<tbody>
+<tr>
+<td style="width: 1089px;">
+<pre style="font-size: 16.2px; font-weight: 400; background-color: #ffffff;">docker run [options] IMAGE
+  # see `docker create` for options</pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size: 16px;">Description: Run a command in an <code>image</code>.</span></p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="">&nbsp;</h2>
+<h2 id="3-manage-containers">3. Manage containers</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="docker-create"><code>docker create</code></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>docker create [options] IMAGE
+  -a, --attach               # attach stdout/err
+  -i, --interactive          # attach stdin (interactive)
+  -t, --tty                  # pseudo-tty
+      --name NAME            # name your image
+  -p, --publish 5000:5000    # port map
+      --expose 5432          # expose a port to linked containers
+  -P, --publish-all          # publish all ports
+      --link container:alias # linking
+  -v, --volume `pwd`:/app    # mount (absolute paths needed)
+  -e, --env NAME=hello       # env vars</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4 id="example">Example</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:code --></p>
+<pre><code>$ docker create --name app_redis_1 \
+  --expose 6379 \
+  redis:3.0.2
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>Create a&nbsp;<code>container</code>&nbsp;from an&nbsp;<code>image</code>.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="4-executing-command-in-a-container">4. Executing command in a container</h3>
+<h3 id="docker-exec"><code>docker exec</code></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>docker exec [options] CONTAINER COMMAND
+  -d, --detach        # run in background
+  -i, --interactive   # stdin
+  -t, --tty           # interactive</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":4} --></p>
+<h4 id="example">Example</h4>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:code --></p>
+<pre><code>$ docker exec app_web_1 tail logs/development.log
+$ docker exec -t -i app_web_1 rails c
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>Run commands in a&nbsp;<code>container</code>.</p>
+<h3 id="5-start-a-container">5.&nbsp; Start a Container</h3>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="docker-start"><code>docker start</code></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>docker start [options] CONTAINER
+  -a, --attach        # attach stdout/err
+  -i, --interactive   # attach stdin
+
+docker stop [options] CONTAINER</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:paragraph --></p>
+<p>Start/stop a&nbsp;<code>container</code>.</p>
+<h3 id="6-managing-container">6. Managing Container</h3>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="docker-ps"><code>docker ps</code></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:code --></p>
+<pre><code>$ docker ps
+$ docker ps -a
+$ docker kill $ID
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>Manage&nbsp;<code>container</code>s using ps/kill.</p>
+<h3 id="7-managing-images">7. Managing Images</h3>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="docker-images"><code>docker images</code></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>$ docker images
+  REPOSITORY   TAG        ID
+  ubuntu       12.10      b750fe78269d
+  me/myapp     latest     7b2431a8d968</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre>$ docker images -a   # also show intermediate</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:paragraph --></p>
+<p>Manages&nbsp;<code>image</code>s.</p>
+<h3 id="8-delete-image">8. Delete Image</h3>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="docker-rmi"><code>docker rmi</code></h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>docker rmi b750fe78269d</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:paragraph --></p>
+<p>Deletes&nbsp;<code>image</code>s.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 id="also-see">Also see</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><a href="http://www.docker.io/gettingstarted/">Getting Started</a>&nbsp;<em>(docker.io)</em></li>
+</ul>
+<h3 id="9-dockerfile">9. Dockerfile</h3>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":1} --></p>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="inheritance">Inheritance</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:code --></p>
+<pre><code>FROM ruby:2.2.2
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="variables">Variables</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:code --></p>
+<pre><code>ENV APP_HOME /myapp
+RUN mkdir $APP_HOME
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="initialization">Initialization</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:code --></p>
+<pre><code>RUN bundle install
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:code --></p>
+<pre><code>WORKDIR /myapp
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:code --></p>
+<pre><code>VOLUME ["/data"]
+# Specification for mount point
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:code --></p>
+<pre><code>ADD file.xyz /file.xyz
+COPY --chown=user:group host_file.xyz /path/container_file.xyz
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="onbuild">Onbuild</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:code --></p>
+<pre><code>ONBUILD RUN bundle install
+# when used with another file
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="commands">Commands</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:code --></p>
+<pre><code>EXPOSE 5900
+CMD    ["bundle", "exec", "rails", "server"]
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="entrypoint">Entrypoint</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:code --></p>
+<pre><code>ENTRYPOINT ["executable", "param1", "param2"]
+ENTRYPOINT command param1 param2
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>Configures a container that will run as an executable.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>ENTRYPOINT exec top -b
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>This will use shell processing to substitute shell variables, and will ignore any&nbsp;<code>CMD</code>&nbsp;or&nbsp;<code>docker run</code>&nbsp;command line arguments.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="metadata">Metadata</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:code --></p>
+<pre><code>LABEL version="1.0"
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:code --></p>
+<pre><code>LABEL "com.example.vendor"="ACME Incorporated"
+LABEL com.example.label-with-value="foo"
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:code --></p>
+<pre><code>LABEL description="This text illustrates \
+that label-values can span multiple lines."
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:heading --></p>
+<h2 id="see-also">See also</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a></li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:heading {"level":1} --></p>
+<h1 id="docker-compose">docker-compose</h1>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="basic-example">Basic example</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre># docker-compose.yml
+version: '2'
+
+services:
+  web:
+    build: .
+    # build from Dockerfile
+    context: ./Path
+    dockerfile: Dockerfile
+    ports:
+     - "5000:5000"
+    volumes:
+     - .:/code
+  redis:
+    image: redis</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="commands">Commands</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>docker-compose start
+docker-compose stop</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre>docker-compose pause
+docker-compose unpause</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre>docker-compose ps
+docker-compose up
+docker-compose down</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading --></p>
+<h2 id="reference">Reference</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>{: .-three-column}</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="building">Building</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>web:
+  # build from Dockerfile
+  build: .</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  # build from custom Dockerfile
+  build:
+    context: ./dir
+    dockerfile: Dockerfile.dev</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  # build from image
+  image: ubuntu
+  image: ubuntu:14.04
+  image: tutum/influxdb
+  image: example-registry:4000/postgresql
+  image: a4bc65fd</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="ports">Ports</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  ports:
+    - "3000"
+    - "8000:80"  # guest:host</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  # expose ports to linked services (not to host)
+  expose: ["3000"]</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="commands">Commands</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  # command to execute
+  command: bundle exec thin -p 3000
+  command: [bundle, exec, thin, -p, 3000]</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  # override the entrypoint
+  entrypoint: /app/start.sh
+  entrypoint: [php, -d, vendor/bin/phpunit]</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="environment-variables">Environment variables</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  # environment vars
+  environment:
+    RACK_ENV: development
+  environment:
+    - RACK_ENV=development</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  # environment vars from file
+  env_file: .env
+  env_file: [.env, .development.env]</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="dependencies">Dependencies</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  # makes the `db` service available as the hostname `database`
+  # (implies depends_on)
+  links:
+    - db:database
+    - redis</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  # make sure `db` is alive before starting
+  depends_on:
+    - db</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="other-options">Other options</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  # make this service extend another
+  extends:
+    file: common.yml  # optional
+    service: webapp</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre>  volumes:
+    - /var/lib/mysql
+    - ./_data:/var/lib/mysql</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading --></p>
+<h2 id="advanced-features">Advanced features</h2>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="labels">Labels</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>services:
+  web:
+    labels:
+      com.example.description: "Accounting web app"</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="dns-servers">DNS servers</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>services:
+  web:
+    dns: 8.8.8.8
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="devices">Devices</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>services:
+  web:
+    devices:
+    - "/dev/ttyUSB0:/dev/ttyUSB0"</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="external-links">External links</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>services:
+  web:
+    external_links:
+      - redis_1
+      - project_db_1:mysql</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="hosts">Hosts</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:preformatted --></p>
+<pre>services:
+  web:
+    extra_hosts:
+      - "somehost:192.168.1.100"</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="sevices">sevices</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>To view list of all the services runnning in swarm</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>docker service ls 
+
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>To see all running services</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>docker stack services stack_name
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>to see all services logs</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>docker service logs stack_name service_name 
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>To scale services quickly across qualified node</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>docker service scale stack_name_service_name=replicas
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 id="cleaning-up">Cleaning up</h3>
+<p><!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>To clean or prune unused (dangling) images</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>docker image prune 
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>To remove all images which are not in use containers , add – a</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>docker image prune -a 
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>To Prune your entire system</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>docker system prune 
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>To leave swarm</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>docker swarm leave  
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>To remove swarm ( deletes all volume data and database info)</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>docker stack rm stack_name  
+</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>To kill all running containers</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre><code>docker kill $(docker ps -q ) </code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:heading --></p>
+<h2 id="support-and-communityif-you-do-get-enough-interest-to-contribute-to-this-cheat-sheet-the-community-at-collabnix-is-available-to-support-you-feel-free-to-raise-pr-and-get-your-favourite-cheat-sheet-a">Support and Community</h2><p style="margin-bottom: 1em; color: rgb(96, 108, 113); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16.5px;">If you do get enough interest to contribute to this Cheat Sheet, the community at Collabnix is available to support you. Feel free to raise PR and get your favourite Cheat Sheet added to the list via&nbsp;<a href="https://github.com/collabnix/dockerlabs/pulls" style="color: rgb(30, 107, 184); margin-top: 0px;">PR</a>, or you can connect to us either on Slack or Discord server.</p><h2 style="margin-top: 2rem; margin-bottom: 1rem; font-weight: normal; color: rgb(21, 153, 87); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">Other Cheat Sheets</h2><ul style="color: rgb(96, 108, 113); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 16.5px;"><li style="margin-top: 0px;"><a href="https://collabnix.com/kubectl-cheatsheet/" style="color: rgb(30, 107, 184); margin-top: 0px;">Kubectl Cheat Sheet</a></li><li><a href="https://dockerlabs.collabnix.com/intermediate/docker-compose/compose-cheatsheet.html" style="color: rgb(30, 107, 184); margin-top: 0px;">Docker Compose Cheat Sheet</a></li></ul>
+<p><!-- /wp:list --></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+									</div>
+			</div>
+					</div>
+		                    </div><!-- .entry-content -->
+                </article><!-- #post-## -->
+            
+						</div>
+
+	</div>
+</div>
+
+</div><!-- /.site-content -->
+        
+        <div class="container">
+            <footer class="footer"> 
+                <p class="pull-left"> © Copyright Collabnix Inc </p> 
+                <p class="pull-right"> Built for Collabnix Community, <a href="https://www.community.collabnix.com/">by Community</a> </p> 
+                <div class="clearfix"></div>
+                <a href="https://collabnix.com/docker-cheatsheet/" class="back-to-top hidden-md-down" style="display: inline;"> 
+                <i class="fa fa-angle-up"></i>
+                </a>
+            </footer>
+        </div>
+        <img alt="Cleantalk Pixel" id="apbct_pixel" style="display: none;" data-src="https://moderate4.cleantalk.org/pixel/836cab3b9fc76deebe06c541b8d1d2c1.gif" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img alt="Cleantalk Pixel" id="apbct_pixel" style="display: none;" src="https://moderate4.cleantalk.org/pixel/836cab3b9fc76deebe06c541b8d1d2c1.gif"></noscript><script type="text/html" id="tmpl-upload-preview">
+    <div class="fpsml-file-preview-row">
+    <span class="fpsml-file-preview-column"><img src="{{data.media_url}}"/></span>
+    <span class="fpsml-file-preview-column">{{data.media_name}}</span>
+    <span class="fpsml-file-preview-column">{{data.media_size}}</span>
+    <span class="fpsml-file-preview-column"><input type="button" class="fpsml-media-delete-button" data-media-id='{{data.media_id}}' data-media-key='{{data.media_key}}' value="Delete"/></span>
+</div></script><script>
+window.addEventListener('sfsi_functions_loaded', function() {
+    if (typeof sfsi_responsive_toggle == 'function') {
+        sfsi_responsive_toggle(0);
+        // console.log('sfsi_responsive_toggle');
+
+    }
+})
+</script>
+    <script>
+        window.addEventListener('sfsi_functions_loaded', function() {
+            if (typeof sfsi_plugin_version == 'function') {
+                sfsi_plugin_version(2.77);
+            }
+        });
+
+        function sfsi_processfurther(ref) {
+            var feed_id = 'ZXdWelo0V1BUNmJ1Wk4vSHlkM0lDajBKZlp3QzBhaytGL0dQQnZ0M2JVdE42aWpWN2lvREdMekJLa1FmRXRGK3FRRi9QdS8renl6T1NIeUFjYWlvdCs1bysxMEZrajlZZ1gxY3IrWWNHNmgzQTNBcnpUZEVUMko4VWx5NCt0L1h8bDJyYUw0NlExZFQrMzdFZEpTQ1ZqMzNEbS96ZWJmTUltTS8zb0E5cEJ0TT0=';
+            var feedtype = 8;
+            var email = jQuery(ref).find('input[name="email"]').val();
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if ((email != "Enter your email") && (filter.test(email))) {
+                if (feedtype == "8") {
+                    var url = "https://api.follow.it/subscription-form/" + feed_id + "/" + feedtype;
+                    window.open(url, "popupwindow", "scrollbars=yes,width=1080,height=760");
+                    return true;
+                }
+            } else {
+                alert("Please enter email address");
+                jQuery(ref).find('input[name="email"]').focus();
+                return false;
+            }
+        }
+    </script>
+    <style type="text/css" aria-selected="true">
+        .sfsi_subscribe_Popinner {
+            width: 100% !important;
+
+            height: auto !important;
+
+            padding: 18px 0px !important;
+
+            background-color: #ffffff !important;
+        }
+        .sfsi_subscribe_Popinner form {
+            margin: 0 20px !important;
+        }
+        .sfsi_subscribe_Popinner h5 {
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-weight: bold !important;
+
+            color: #000000 !important;
+
+            font-size: 16px !important;
+
+            text-align: center !important;
+            margin: 0 0 10px !important;
+            padding: 0 !important;
+        }
+        .sfsi_subscription_form_field {
+            margin: 5px 0 !important;
+            width: 100% !important;
+            display: inline-flex;
+            display: -webkit-inline-flex;
+        }
+
+        .sfsi_subscription_form_field input {
+            width: 100% !important;
+            padding: 10px 0px !important;
+        }
+
+        .sfsi_subscribe_Popinner input[type=email] {
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-style: normal !important;
+
+            color:  !important;
+
+            font-size: 14px !important;
+
+            text-align: center !important;
+        }
+
+        .sfsi_subscribe_Popinner input[type=email]::-webkit-input-placeholder {
+
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-style: normal !important;
+
+            color:  !important;
+
+            font-size: 14px !important;
+
+            text-align: center !important;
+        }
+        .sfsi_subscribe_Popinner input[type=email]:-moz-placeholder {
+            /* Firefox 18- */
+
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-style: normal !important;
+
+            color:  !important;
+
+            font-size: 14px !important;
+
+            text-align: center !important;
+
+        }
+
+        .sfsi_subscribe_Popinner input[type=email]::-moz-placeholder {
+            /* Firefox 19+ */
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-style: normal !important;
+
+            color:  !important;
+
+            font-size: 14px !important;
+
+            text-align: center !important;
+
+        }
+
+        .sfsi_subscribe_Popinner input[type=email]:-ms-input-placeholder {
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-style: normal !important;
+
+            color:  !important;
+
+            font-size: 14px !important;
+
+            text-align: center !important;
+        }
+
+        .sfsi_subscribe_Popinner input[type=submit] {
+            font-family: Helvetica,Arial,sans-serif !important;
+
+            font-weight: bold !important;
+
+            color: #000000 !important;
+
+            font-size: 16px !important;
+
+            text-align: center !important;
+
+            background-color: #dedede !important;
+        }
+
+        .sfsi_shortcode_container {
+            float: left;
+        }
+
+        .sfsi_shortcode_container .norm_row .sfsi_wDiv {
+            position: relative !important;
+        }
+
+        .sfsi_shortcode_container .sfsi_holders {
+            display: none;
+        }
+
+            </style>
+
+<link rel="stylesheet" id="e-animations-css" href="./Docker Cheatsheet – Collabnix_files/animations.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/table-of-content.js.download" id="my-functions1-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/index.js.download" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/collabnix.com\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/index.js(1).download" id="contact-form-7-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/display-medium-posts-public.js.download" id="display-medium-posts-js"></script>
+<script type="text/javascript" id="email-subscribers-js-extra">
+/* <![CDATA[ */
+var es_data = {"messages":{"es_empty_email_notice":"Please enter email address","es_rate_limit_notice":"You need to wait for sometime before subscribing again","es_single_optin_success_message":"Successfully Subscribed.","es_email_exists_notice":"Email Address already exists!","es_unexpected_error_notice":"Oops.. Unexpected error occurred.","es_invalid_email_notice":"Invalid email address","es_try_later_notice":"Please try after some time"},"es_ajax_url":"https:\/\/collabnix.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/email-subscribers-public.js.download" id="email-subscribers-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/core.min.js.download" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/modernizr.custom.min.js.download" id="SFSIjqueryModernizr-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/jquery.shuffle.min.js.download" id="SFSIjqueryShuffle-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/random-shuffle-min.js.download" id="SFSIjqueryrandom-shuffle-js"></script>
+<script type="text/javascript" id="SFSICustomJs-js-extra">
+/* <![CDATA[ */
+var sfsi_icon_ajax_object = {"ajax_url":"https:\/\/collabnix.com\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/collabnix.com\/wp-content\/plugins\/ultimate-social-media-icons\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/custom.js.download" id="SFSICustomJs-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/tether.min.js.download" id="bootstrap4tether-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/bootstrap.min.js.download" id="bootstrap4-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/ie10-viewport-bug-workaround.js.download" id="mediumish-ieviewportbugworkaround-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/masonry.pkgd.min.js.download" id="mediumish-masonrypkgd-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/mediumish.js.download" id="mediumish-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/api.js.download" id="google-recaptcha-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/regenerator-runtime.min.js.download" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/wp-polyfill.min.js.download" id="wp-polyfill-js"></script>
+<script type="text/javascript" id="wpcf7-recaptcha-js-extra">
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6Le5G_YUAAAAACvlIAsyKaqyZdm3XcLtm5qGqpLi","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/index.js(2).download" id="wpcf7-recaptcha-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/smush-lazy-load.min.js.download" id="smush-lazy-load-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/js.cookie.js.download" id="jquery-cookie-js"></script>
+<script type="text/javascript" id="wp-claps-applause-js-extra">
+/* <![CDATA[ */
+var clapsapplause = {"ajax_url":"https:\/\/collabnix.com\/wp-admin\/admin-ajax.php","lovedText":"","loveText":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/claps-applause.js.download" id="wp-claps-applause-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/webpack.runtime.min.js.download" id="elementor-webpack-runtime-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/frontend-modules.min.js.download" id="elementor-frontend-modules-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/waypoints.min.js.download" id="elementor-waypoints-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/swiper.min.js.download" id="swiper-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/share-link.min.js.download" id="share-link-js"></script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/dialog.min.js.download" id="elementor-dialog-js"></script>
+<script type="text/javascript" id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},
+"version":"3.8.1","is_static":false,"experimentalFeatures":{"e_import_export":true,"e_hidden_wordpress_widgets":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true},"urls":{"assets":"https:\/\/collabnix.com\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"global_image_lightbox":"yes","active_breakpoints":["viewport_mobile","viewport_tablet"],"lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":9655,"title":"Docker%20Cheatsheet%20%E2%80%93%20Collabnix","excerpt":"","featuredImage":false}};
+</script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/frontend.min.js.download" id="elementor-frontend-js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/preloaded-modules.min.js.download" id="preloaded-modules-js"></script><svg style="display: none;" class="e-font-icon-svg-symbols"></svg>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/underscore.min.js.download" id="underscore-js"></script>
+<script type="text/javascript" id="wp-util-js-extra">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/wp-util.min.js.download" id="wp-util-js"></script>
+<script type="text/javascript" id="wpforms-elementor-js-extra">
+/* <![CDATA[ */
+var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Docker Cheatsheet – Collabnix_files/frontend.min.js(1).download" id="wpforms-elementor-js"></script>
+         
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" src="./Docker Cheatsheet – Collabnix_files/anchor.html" width="256" height="60" role="presentation" name="a-izwikx5yogij" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./Docker Cheatsheet – Collabnix_files/saved_resource.html"></iframe></div><div class="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-lightbox" id="elementor-lightbox-slideshow-single-img" style="display: none;"><div class="dialog-widget-content dialog-lightbox-widget-content elementor-aspect-ratio-169" style="top: 0px; left: 0px;"><div tabindex="0" role="button" aria-label="Close (Esc)" class="dialog-close-button dialog-lightbox-close-button"><i class="eicon-close"></i></div><div class="dialog-header dialog-lightbox-header"></div><div class="dialog-message dialog-lightbox-message zoomIn"></div><div class="dialog-buttons-wrapper dialog-lightbox-buttons-wrapper"></div></div></div></body></html>
