@@ -1,0 +1,58 @@
+services:
+  catalog.api:
+    build:
+      context: .
+      dockerfile: src/Catalog/Catalog.API/Dockerfile
+    depends_on:
+      catalogdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ConnectionStrings:CatalogDatabaseSettings: Server=catalogdb,1433;Database=BasketDB;User
+        Id=sa;Password=Pass@1234;
+    image: catalogapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: 8000
+      protocol: tcp
+    - mode: ingress
+      target: 443
+      published: 8000
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\AntoniusA\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\AntoniusA\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+  catalogdb:
+    container_name: catalogdb
+    image: mcr.microsoft.com/mssql/server
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: 1433
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: bind
+      source: /site
+      target: /data/db
+      bind:
+        create_host_path: true
+networks:
+  default:
+    name: dockercompose17972507872940137663_default

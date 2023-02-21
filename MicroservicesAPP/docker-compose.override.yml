@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+    catalogdb:
+        container_name: catalogdb
+        restart: always
+        volumes:
+        - ${WEBAPP_STORAGE_HOME}/site:/data/db
+        ports:
+        - "1433:1433"
+        environment:
+            SA_PASSWORD: "Pass@1234"
+            ACCEPT_EULA: "Y"
+    catalog.api:
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=https://+:443;http://+:80
+            - "ConnectionStrings:CatalogDatabaseSettings=Server=catalogdb,1433;Database=BasketDB;User Id=sa;Password=Pass@1234;"
+        depends_on:
+            - catalogdb
+        ports:
+            - "8009:80"
+        volumes:
+            - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+            - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

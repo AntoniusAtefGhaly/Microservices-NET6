@@ -1,3 +1,16 @@
+/////////sql server ////////////////
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=yourStrong(!)Password" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+docker run -e "ACCEPT_EULA=Y" -e 'MSSQL_SA_PASSWORD=<YourStrong!Passw0rd>' -p 1400:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+notes
+	"ACCEPT_EULA=Y"  not 'ACCEPT_EULA=Y'
+	strong Pasword
+	must write port after the localhost,1433
+
+
+docker run -e “ACCEPT_EULA=Y” -e “SA_PASSWORD=Pass@1234” -p 1433:1433 --name MSSQLSERVER -v /home/docker/dockervolumes/MSSQL/:/var/opt/mssql -d mcr.microsoft.com/mssql/server:2019-latest --restart=always
+
+
 ///////////////mongo command////////////////////
 to use mongo command 
 -mongo
