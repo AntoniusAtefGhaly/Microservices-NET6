@@ -68,9 +68,9 @@ namespace Catalog.API.Repositories
             if (product != null)
             {
                 _context.Products.Remove(product);
-                return false;
+                _context.SaveChanges();
+                return true;
             }
-            _context.SaveChanges();
             return true;
         }
     }
