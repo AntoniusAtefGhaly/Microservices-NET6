@@ -7,19 +7,40 @@ services:
         volumes:
         - ${WEBAPP_STORAGE_HOME}/site:/data/db
         ports:
-        - "1433:1433"
+        - "1435:1433"
         environment:
-            SA_PASSWORD: "Pass@1234"
+            MSSQL_SA_PASSWORD: "Pass@1234"
             ACCEPT_EULA: "Y"
+
+    basketdb:
+        container_name: basketdb
+        restart: always
+        volumes:
+        - ${WEBAPP_STORAGE_HOME}/site:/data/db
+        ports:
+        - "1434:1433"
+        environment:
+            MSSQL_SA_PASSWORD: "Pass@1234"
+            ACCEPT_EULA: "Y"
+
     catalog.api:
         environment:
-            - ASPNETCORE_ENVIRONMENT=Development
-            - ASPNETCORE_URLS=https://+:443;http://+:80
-            - "ConnectionStrings:CatalogDatabaseSettings=Server=catalogdb,1433;Database=BasketDB;User Id=sa;Password=Pass@1234;"
+          - ASPNETCORE_ENVIRONMENT=Development
+          - ASPNETCORE_URLS=http://+:80
+          - "ConnectionStrings:CatalogDatabaseSettings=Server=catalogdb;Database=CatalogDb;User Id=sa;Password=Pass@1234;"
         depends_on:
             - catalogdb
         ports:
-            - "8009:80"
+          - "8000:80"
         volumes:
             - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
             - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    basket.api:
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:80
+            - "ConnectionStrings:BasketDatabaseSettings=Server=basketdb;Database=BasketDb;User Id=sa;Password=Pass@1234;"
+        ports:
+            - "8001:80"
+        depends_on:
+            - basketdb

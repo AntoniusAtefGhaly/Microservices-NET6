@@ -1,6 +1,7 @@
 ﻿using Catalog.API.Data.Interfaces;
 using Catalog.API.Entities;
-using Catalog.API.Settings;
+
+//using Catalog.API.Settings;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace Catalog.API.Data
     {
         public CatalogContext(DbContextOptions<CatalogContext> options) : base(options)
         {
+            this.Database.Migrate();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

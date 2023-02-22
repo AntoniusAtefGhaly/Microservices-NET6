@@ -20,3 +20,10 @@ D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\Catalog.API.pdb
 D:\training\study\Microservices-NET6\MicroservicesAPP\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 D:\training\study\Microservices-NET6\MicroservicesAPP\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 D:\training\study\Microservices-NET6\MicroservicesAPP\obj\Debug\docker-compose.dcproj.CopyComplete
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\Basket.API.deps.json
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\Basket.API.runtimeconfig.json
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\Basket.API.exe
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\Basket.API.dll
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\AutoMapper.dll
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\Basket.API.pdb

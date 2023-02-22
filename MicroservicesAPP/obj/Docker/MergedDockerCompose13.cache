@@ -1,15 +1,16 @@
+name: dockercompose17972507872940137663
 services:
   catalog.api:
     build:
-      context: .
+      context: D:\training\study\Microservices-NET6\MicroservicesAPP
       dockerfile: src/Catalog/Catalog.API/Dockerfile
     depends_on:
       catalogdb:
         condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: https://+:443;http://+:80
-      ConnectionStrings:CatalogDatabaseSettings: Server=catalogdb,1433;Database=BasketDB;User
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings:CatalogDatabaseSettings: Server=catalogdb,1433;Database=CatalogDb;User
         Id=sa;Password=Pass@1234;
     image: catalogapi
     networks:
@@ -17,11 +18,7 @@ services:
     ports:
     - mode: ingress
       target: 80
-      published: 8001
-      protocol: tcp
-    - mode: ingress
-      target: 443
-      published: 8001
+      published: "8000"
       protocol: tcp
     volumes:
     - type: bind
@@ -38,13 +35,16 @@ services:
         create_host_path: true
   catalogdb:
     container_name: catalogdb
-    image: mcr.microsoft.com/mssql/server
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: Pass@1234
+    image: mcr.microsoft.com/mssql/server:2022-latest
     networks:
       default: null
     ports:
     - mode: ingress
       target: 1433
-      published: 1433
+      published: "1433"
       protocol: tcp
     restart: always
     volumes:

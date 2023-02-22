@@ -1,13 +1,17 @@
+name: dockercompose17972507872940137663
 services:
   catalog.api:
     build:
-      context: .
+      context: D:\training\study\Microservices-NET6\MicroservicesAPP
       dockerfile: src/Catalog/Catalog.API/Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
         com.microsoft.visual-studio.project-name: Catalog.API
       target: base
     container_name: Catalog.API
+    depends_on:
+      catalogdb:
+        condition: service_started
     entrypoint:
     - tail
     - -f
@@ -16,6 +20,8 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
       ASPNETCORE_URLS: https://+:443;http://+:80
+      ConnectionStrings:CatalogDatabaseSettings: Server=catalogdb,1433;Database=BasketDB;User
+        Id=sa;Password=Pass@1234;
       DOTNET_USE_POLLING_FILE_WATCHER: "1"
       NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
     image: catalogapi:dev
@@ -32,9 +38,7 @@ services:
     ports:
     - mode: ingress
       target: 80
-      protocol: tcp
-    - mode: ingress
-      target: 443
+      published: "8009"
       protocol: tcp
     tty: true
     volumes:
@@ -81,6 +85,26 @@ services:
     - type: bind
       source: D:\training\study\Microservices-NET6\MicroservicesAPP
       target: /src
+      bind:
+        create_host_path: true
+  catalogdb:
+    container_name: catalogdb
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Pass@1234
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1433"
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: bind
+      source: /site
+      target: /data/db
       bind:
         create_host_path: true
 networks:

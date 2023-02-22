@@ -6,11 +6,8 @@ notes
 	"ACCEPT_EULA=Y"  not 'ACCEPT_EULA=Y'
 	strong Pasword
 	must write port after the localhost,1433
-
-
-docker run -e “ACCEPT_EULA=Y” -e “SA_PASSWORD=Pass@1234” -p 1433:1433 --name MSSQLSERVER -v /home/docker/dockervolumes/MSSQL/:/var/opt/mssql -d mcr.microsoft.com/mssql/server:2019-latest --restart=always
-
-
+	Don’t use port 1433 
+ 
 ///////////////mongo command////////////////////
 to use mongo command 
 -mongo
@@ -48,6 +45,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Pass@1234" -p 1433:1433 -d mcr.mic
 docker exec -it crazy_zhukovsky /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pass@1234
  
 must write port after the localhost,1433
+use MSSQL_SA_PASSWORD not  SA_PASSWORD
 
 //docker error reset
 gpupdate /force
