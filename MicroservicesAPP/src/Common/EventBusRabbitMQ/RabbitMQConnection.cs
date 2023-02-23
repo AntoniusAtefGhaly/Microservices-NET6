@@ -30,15 +30,39 @@ namespace EventBusRabbitMQ
                 return !_disposed && _connection != null && _connection.IsOpen;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public IModel CreateModel()
         {
-            throw new NotImplementedException();
+            if (!IsConnected)
+            {
+                throw new InvalidOperationException("no rabbit connection");
+            }
+            else
+            {
+                return _connection.CreateModel();  
+            }
+
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            if (!_disposed)
+            {
+                return;
+            }
+            try
+            {
+                _connection.Dispose();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public bool TryConnect()

@@ -27,3 +27,7 @@ D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\Basket.API.dll
 D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\AutoMapper.dll
 D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\Basket.API.pdb
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\EventBusRabbitMQ.dll
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\RabbitMQ.Client.dll
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\Newtonsoft.Json.dll
+D:\training\study\Microservices-NET6\MicroservicesAPP\bin\Debug\EventBusRabbitMQ.pdb

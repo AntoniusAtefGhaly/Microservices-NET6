@@ -5,6 +5,8 @@ services:
         image: mcr.microsoft.com/mssql/server:2022-latest
     basketdb:
         image: mcr.microsoft.com/mssql/server:2022-latest
+    rabbitmq:
+        image: rabbitmq:3-management-alpine
 
     catalog.api:
         image: ${DOCKER_REGISTRY-}catalogapi

@@ -33,6 +33,11 @@ namespace Basket.API.Repositories
             return basket;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="basket"></param>
+        /// <returns></returns>
         public async Task<BasketCart> UpdateBasket(BasketCart basket)
         {
             _context.BasketCarts.Update(basket);

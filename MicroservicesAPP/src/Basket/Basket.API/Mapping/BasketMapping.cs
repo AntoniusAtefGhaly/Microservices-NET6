@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Basket.API.Entities;
+using EventBusRabbitMQ.Events;
 
 //using Events.EventBusRabbitMQ;
 using System;
@@ -13,7 +14,7 @@ namespace Basket.API.Mapping
     {
         public BasketMapping()
         {
-            //CreateMap<BasketCheckout, BasketCheckOutEvent>().ReverseMap();
+            CreateMap<BasketCheckout, BasketCheckoutEvent>().ReverseMap();
         }
     }
 }

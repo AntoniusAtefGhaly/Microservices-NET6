@@ -22,6 +22,13 @@ services:
         environment:
             MSSQL_SA_PASSWORD: "Pass@1234"
             ACCEPT_EULA: "Y"
+    rabbitmq:
+        container_name: rabbitmq
+        restart: always
+        ports:
+        - "15672:15672"
+        - "5672:5672"
+
 
     catalog.api:
         environment:
@@ -40,7 +47,9 @@ services:
             - ASPNETCORE_ENVIRONMENT=Development
             - ASPNETCORE_URLS=http://+:80
             - "ConnectionStrings:BasketDatabaseSettings=Server=basketdb;Database=BasketDb;User Id=sa;Password=Pass@1234;"
+            - "EventBus:HostName=rabbitmq"
         ports:
             - "8001:80"
         depends_on:
             - basketdb
+            - rabbitmq

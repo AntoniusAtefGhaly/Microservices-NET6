@@ -67,3 +67,7 @@ D:\training\study\Microservices-NET6\MicroservicesAPP\src\Basket\Basket.API\obj\
 D:\training\study\Microservices-NET6\MicroservicesAPP\src\Basket\Basket.API\obj\Debug\net6.0\ref\Basket.API.dll
 D:\training\study\Microservices-NET6\MicroservicesAPP\src\Basket\Basket.API\bin\Debug\net6.0\Humanizer.dll
 D:\training\study\Microservices-NET6\MicroservicesAPP\src\Basket\Basket.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\training\study\Microservices-NET6\MicroservicesAPP\src\Basket\Basket.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\training\study\Microservices-NET6\MicroservicesAPP\src\Basket\Basket.API\bin\Debug\net6.0\RabbitMQ.Client.dll
+D:\training\study\Microservices-NET6\MicroservicesAPP\src\Basket\Basket.API\bin\Debug\net6.0\EventBusRabbitMQ.dll
+D:\training\study\Microservices-NET6\MicroservicesAPP\src\Basket\Basket.API\bin\Debug\net6.0\EventBusRabbitMQ.pdb
