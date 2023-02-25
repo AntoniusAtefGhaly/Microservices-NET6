@@ -22,13 +22,13 @@ namespace Basket.API.Repositories
 
         public async Task<BasketCart> GetBasket(string userName)
         {
-            var basket = _context.BasketCarts.Include(b => b.Items).FirstOrDefault(b => b.UserName == userName);
+            var basket = _context.BasketCarts.Include(b => b.BasketCartItems).FirstOrDefault(b => b.UserName == userName);
             if (basket == null)
             {
-                var cart = new BasketCart(userName);
-                _context.BasketCarts.Add(cart);
-                _context.SaveChanges();
-                return _context.BasketCarts.Include(b => b.Items).FirstOrDefault(b => b.UserName == userName); ;
+                //var cart = new BasketCart(userName);
+                //_context.BasketCarts.Add(cart);
+                //_context.SaveChanges();
+                //return _context.BasketCarts.Include(b => b.BasketCartItems).FirstOrDefault(b => b.UserName == userName); ;
             }
             return basket;
         }
@@ -40,15 +40,29 @@ namespace Basket.API.Repositories
         /// <returns></returns>
         public async Task<BasketCart> UpdateBasket(BasketCart basket)
         {
-            _context.BasketCarts.Update(basket);
-            _context.SaveChanges();
-            var baskt = _context.BasketCarts.FirstOrDefault(b => b.UserName == basket.UserName);
-            return await GetBasket(basket.UserName);
+            try
+            {
+                _context.BasketCarts.Update(basket);
+                _context.SaveChanges();
+                var baskt = _context.BasketCarts.FirstOrDefault(b => b.UserName == basket.UserName);
+                return await GetBasket(basket.UserName);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public async Task<bool> DeleteBasket(string userName)
         {
             var baskt = _context.BasketCarts.FirstOrDefault(b => b.UserName == userName);
+
+            var items = _context.BasketCarts.Include(b => b.BasketCartItems).FirstOrDefault(b => b.UserName == userName).BasketCartItems;
+            if (items != null)
+                _context.BasketCartItems.RemoveRange(items);
+            _context.SaveChanges();
+
+            baskt = _context.BasketCarts.FirstOrDefault(b => b.UserName == userName);
             if (baskt == null)
                 return false;
             _context.BasketCarts.Remove(baskt);
@@ -63,14 +77,16 @@ namespace Basket.API.Repositories
             {
                 _context.BasketCarts.Add(basket);
                 _context.SaveChanges();
+                //                var baskt = _context.BasketCarts.First(b => b.UserName == basket.UserName);
+                return await GetBasket(basket.UserName);
             }
             catch (Exception ex)
             {
-                var msg = ex.Message;
+                _context.BasketCarts.Update(basket);
+                _context.SaveChanges();
+                //                var baskt = _context.BasketCarts.First(b => b.UserName == basket.UserName);
+                return await GetBasket(basket.UserName);
             }
-
-            var baskt = _context.BasketCarts.First(b => b.UserName == basket.UserName);
-            return await GetBasket(basket.UserName);
         }
     }
 }

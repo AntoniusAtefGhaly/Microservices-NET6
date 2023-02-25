@@ -29,6 +29,20 @@ namespace Basket.API.Migrations
                     b.HasKey("UserName");
 
                     b.ToTable("BasketCarts");
+
+                    b.HasData(
+                        new
+                        {
+                            UserName = "user1"
+                        },
+                        new
+                        {
+                            UserName = "user2"
+                        },
+                        new
+                        {
+                            UserName = "user3"
+                        });
                 });
 
             modelBuilder.Entity("Basket.API.Entities.BasketCartItem", b =>
@@ -39,7 +53,7 @@ namespace Basket.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("BasketCartUserName")
+                    b.Property<string>("BasketCart")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Color")
@@ -62,7 +76,7 @@ namespace Basket.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BasketCartUserName");
+                    b.HasIndex("BasketCart");
 
                     b.ToTable("BasketCartItems");
                 });
@@ -70,13 +84,13 @@ namespace Basket.API.Migrations
             modelBuilder.Entity("Basket.API.Entities.BasketCartItem", b =>
                 {
                     b.HasOne("Basket.API.Entities.BasketCart", null)
-                        .WithMany("Items")
-                        .HasForeignKey("BasketCartUserName");
+                        .WithMany("BasketCartItems")
+                        .HasForeignKey("BasketCart");
                 });
 
             modelBuilder.Entity("Basket.API.Entities.BasketCart", b =>
                 {
-                    b.Navigation("Items");
+                    b.Navigation("BasketCartItems");
                 });
 #pragma warning restore 612, 618
         }

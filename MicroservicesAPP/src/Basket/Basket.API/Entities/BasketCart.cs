@@ -10,10 +10,13 @@ namespace Basket.API.Entities
     [Table("BasketCarts")]
     public class BasketCart
     {
+        //        public int Id { get; set; }
         [Key]
+        [Required]
         public string UserName { get; set; }
 
-        public List<BasketCartItem> Items { get; set; } = new List<BasketCartItem>();
+        [ForeignKey(nameof(BasketCart))]
+        public ICollection<BasketCartItem> BasketCartItems { get; set; } = new List<BasketCartItem>();
 
         public BasketCart(string userName)
         {
@@ -25,12 +28,14 @@ namespace Basket.API.Entities
             get
             {
                 decimal totalprice = 0;
-                foreach (var item in Items)
+                foreach (var item in BasketCartItems)
                 {
                     totalprice += item.Price * item.Quantity;
                 }
                 return totalprice;
             }
         }
+
+        //       public ICollection<BasketCartItem> basketCartItems { get; set; }
     }
 }

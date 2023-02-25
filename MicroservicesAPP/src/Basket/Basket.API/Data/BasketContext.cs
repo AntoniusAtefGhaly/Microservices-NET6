@@ -1,12 +1,8 @@
 ﻿using Basket.API.Data.Interfaces;
 using Basket.API.Entities;
-using Microsoft.EntityFrameworkCore;
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+//using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Basket.API.Data
 {
@@ -16,6 +12,23 @@ namespace Basket.API.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new BasketConfiguration());
+
+            //modelBuilder.Entity<BasketCart>().
+            //    HasMany(a => a.BasketCartItems)
+            //.WillCascadeOnDelete(true);
+        }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<BasketCart>()
+        //    .HasMany(a => a.BasketCartItems)
+        //    .WithOptional() // or `WithRequired() in case Car requires Person
+        //    .WillCascadeOnDelete(true);
+        //}
         public DbSet<BasketCart> BasketCarts { get; set; }
 
         public DbSet<BasketCartItem> BasketCartItems { get; set; }

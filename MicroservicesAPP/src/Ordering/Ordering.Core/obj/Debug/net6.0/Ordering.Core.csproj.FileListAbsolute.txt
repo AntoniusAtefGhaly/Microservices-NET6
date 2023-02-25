@@ -1,0 +1,12 @@
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\bin\Debug\net6.0\Ordering.Core.deps.json
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\bin\Debug\net6.0\Ordering.Core.dll
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\bin\Debug\net6.0\Ordering.Core.pdb
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\obj\Debug\net6.0\Ordering.Core.csproj.AssemblyReference.cache
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\obj\Debug\net6.0\Ordering.Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\obj\Debug\net6.0\Ordering.Core.AssemblyInfoInputs.cache
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\obj\Debug\net6.0\Ordering.Core.AssemblyInfo.cs
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\obj\Debug\net6.0\Ordering.Core.csproj.CoreCompileInputs.cache
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\obj\Debug\net6.0\Ordering.Core.dll
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\obj\Debug\net6.0\refint\Ordering.Core.dll
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\obj\Debug\net6.0\Ordering.Core.pdb
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Core\obj\Debug\net6.0\ref\Ordering.Core.dll

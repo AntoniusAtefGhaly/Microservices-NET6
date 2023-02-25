@@ -1,0 +1,226 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj": {}
+  },
+  "projects": {
+    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj",
+        "projectName": "Ordering.Api",
+        "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj",
+        "packagesPath": "C:\\Users\\Antonius\\.nuget\\packages\\",
+        "outputPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Antonius\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj": {
+                "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.14, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj",
+        "projectName": "Ordering.Core",
+        "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj",
+        "packagesPath": "C:\\Users\\Antonius\\.nuget\\packages\\",
+        "outputPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Antonius\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj",
+        "projectName": "Ordering.Infrastrcture",
+        "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj",
+        "packagesPath": "C:\\Users\\Antonius\\.nuget\\packages\\",
+        "outputPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Antonius\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj": {
+                "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

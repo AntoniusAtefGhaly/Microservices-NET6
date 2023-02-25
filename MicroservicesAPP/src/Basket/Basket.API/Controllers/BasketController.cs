@@ -37,6 +37,10 @@ namespace Basket.API.Controllers
         public async Task<ActionResult<BasketCart>> GetBasket(string userName)
         {
             var basket = await _repository.GetBasket(userName);
+            if (basket == null)
+            {
+                return await _repository.CreateBasket(new BasketCart(userName));
+            }
 
             return Ok(basket ?? new BasketCart("username"));
         }
@@ -46,6 +50,8 @@ namespace Basket.API.Controllers
         public async Task<ActionResult<BasketCart>> UpdateBasket([FromBody] BasketCart baskt)
         {
             var basket = await _repository.UpdateBasket(baskt);
+            if (basket == null)
+                return BadRequest("");
             return Ok(basket);
         }
 
@@ -54,6 +60,8 @@ namespace Basket.API.Controllers
         public async Task<ActionResult<BasketCart>> CreateBasket([FromBody] BasketCart basket)
         {
             var bas = await _repository.CreateBasket(basket);
+            if (basket == null)
+                return BadRequest("");
             return Ok(bas);
         }
 
