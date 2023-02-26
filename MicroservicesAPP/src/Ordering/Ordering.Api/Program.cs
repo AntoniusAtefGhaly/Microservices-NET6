@@ -1,16 +1,18 @@
+using EventBusRabbitMQ;
 using MediatR;
 using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Ordering.Api.RabitMQ;
 using Ordering.Application.Handlers;
 using Ordering.Core.Repositories;
 using Ordering.Core.Repositories.Base;
 using Ordering.Infrastrcture.Data;
 using Ordering.Infrastrcture.Repositories;
 using Ordering.Infrastrcture.Repositories.Base;
-
+using RabbitMQ.Client;
 using System.Reflection;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -53,24 +55,24 @@ namespace Ordering.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "order api", Version = "v1" });
             });
 
-            //builder.Services.AddSingleton<IRabbitMQConnection>(sp =>
-            //{
-            //    var factory = new ConnectionFactory()
-            //    {
-            //        HostName = Configuration["EventBus:HostName"]
-            //    };
-            //    if (!string.IsNullOrEmpty(Configuration["EventBus:UserName"]))
-            //    {
-            //        factory.UserName = Configuration["EventBus:UserName"];
-            //    }
-            //    if (!string.IsNullOrEmpty(Configuration["EventBus:PassWord"]))
-            //    {
-            //        factory.UserName = Configuration["EventBus:PassWord"];
-            //    }
-            //    return new RabbitMQConnection(factory);
-            //}
-            //);
-            //services.AddSingleton<EventBusRabbitMQConsumer>();
+            builder.Services.AddSingleton<IRabbitMQConnection>(sp =>
+            {
+                var factory = new ConnectionFactory()
+                {
+                    HostName = builder.Configuration["EventBus:HostName"]
+                };
+                if (!string.IsNullOrEmpty(builder.Configuration["EventBus:UserName"]))
+                {
+                    factory.UserName = builder.Configuration["EventBus:UserName"];
+                }
+                if (!string.IsNullOrEmpty(builder.Configuration["EventBus:PassWord"]))
+                {
+                    factory.UserName = builder.Configuration["EventBus:PassWord"];
+                }
+                return new RabbitMQConnection(factory);
+            }
+            );
+            builder.Services.AddSingleton<EventBusRabbitMQConsumer>();
 
             /* seed DB */
 
