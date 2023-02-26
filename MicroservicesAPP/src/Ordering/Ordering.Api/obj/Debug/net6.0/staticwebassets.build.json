@@ -1,23 +1,11 @@
 {
   "Version": 1,
-  "Hash": "fJSC9Zi1AQjd+H/OGib2kFWFlWtmuSaFzP7sWZLvTko=",
+  "Hash": "drWoavJklFOfKf0RrWJo/5ae87+JygkYOH5ZThvSOhY=",
   "Source": "Ordering.Api",
   "BasePath": "_content/Ordering.Api",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [
-    {
-      "Identity": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\Basket.API.csproj",
-      "Version": 2,
-      "Source": "Basket.API",
-      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
-    }
-  ],
+  "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
   "Assets": []
 }

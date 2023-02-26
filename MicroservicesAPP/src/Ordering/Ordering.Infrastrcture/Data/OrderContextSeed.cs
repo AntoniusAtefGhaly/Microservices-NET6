@@ -32,7 +32,7 @@ namespace Ordering.Infrastrcture.Data
                     retryForAvailability++;
                     var log = loggerFactory.CreateLogger<OrderContextSeed>();
                     log.LogError(exception.Message);
-                    System.Threading.Thread.Sleep(2000);
+                    System.Threading.Thread.Sleep(1000);
                     await SeedAsync(orderContext, loggerFactory, retryForAvailability);
                 }
             }

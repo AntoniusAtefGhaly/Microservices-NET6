@@ -25,3 +25,6 @@ D:\training\study\Microservices-NET6\MicroservicesAPP\src\Ordering\Ordering.Appl
 D:\training\study\Microservices-NET6\MicroservicesAPP\src\Ordering\Ordering.Application\bin\Debug\net6.0\Ordering.Core.dll
 D:\training\study\Microservices-NET6\MicroservicesAPP\src\Ordering\Ordering.Application\bin\Debug\net6.0\Ordering.Core.pdb
 D:\training\study\Microservices-NET6\MicroservicesAPP\src\Ordering\Ordering.Application\obj\Debug\net6.0\Ordering.Application.csproj.CopyComplete
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Application\bin\Debug\net6.0\Ordering.Core.dll
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Application\bin\Debug\net6.0\Ordering.Core.pdb
+F:\1.NET\microservices\Microservice-NET6\MicroservicesAPP\src\Ordering\Ordering.Application\obj\Debug\net6.0\Ordering.Application.csproj.CopyComplete
