@@ -27,7 +27,7 @@ namespace Ordering.Infrastrcture.Data
             }
             catch (Exception exception)
             {
-                if (retryForAvailability < 50)
+                if (retryForAvailability < 5)
                 {
                     retryForAvailability++;
                     var log = loggerFactory.CreateLogger<OrderContextSeed>();
@@ -42,7 +42,7 @@ namespace Ordering.Infrastrcture.Data
         {
             return new List<Order>
             {
-                new Order() {UserName = "swn", FirstName = "Mehmet", LastName = "Ozkaya", EmailAddress = "ezozkme@gmail.com", AddressLine = "Bahcelievler", Country = "Turkey" }
+                new Order() {UserName = "swn", FirstName = "Mehmet", LastName = "Ozkaya", EmailAddress = "ezozkme@gmail.com", AddressLine = "Bahcelievler", Country = "Turkey",CVV="152",CardName="a",CardNumber="a",Expiration="2022101",PaymentMethod=1,State="a",TotalPrice=502,ZipCode="201",Id=0 }
             };
         }
     }

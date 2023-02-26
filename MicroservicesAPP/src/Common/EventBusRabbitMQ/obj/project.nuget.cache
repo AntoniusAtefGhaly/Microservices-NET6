@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "YDPYVbsRysmp68FsnQmBAjFnY9Ef6TKR64aeK+ysw3RNj+5KiCYuZ/+0orjOQPd0vV4vlrnHxY8Ld2ud2ZII2A==",
+  "dgSpecHash": "rsm+iLMA4N3qSUt6HuxxW3z89bv24YgAlb4N/IpekUAqoAI/uj4DSQh6LS1H2hlFGcZL8OfLeFdF6FykOgInhg==",
   "success": true,
-  "projectFilePath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+  "projectFilePath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Antonius\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
-    "C:\\Users\\Antonius\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
-    "C:\\Users\\Antonius\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\Antonius\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+    "C:\\Users\\AntoniusA\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\AntoniusA\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
+    "C:\\Users\\AntoniusA\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\AntoniusA\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
   ],
   "logs": []
 }

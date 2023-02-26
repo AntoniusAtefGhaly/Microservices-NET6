@@ -1,12 +1,18 @@
+using MediatR;
 using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Ordering.Application.Handlers;
 using Ordering.Core.Repositories;
 using Ordering.Core.Repositories.Base;
 using Ordering.Infrastrcture.Data;
 using Ordering.Infrastrcture.Repositories;
 using Ordering.Infrastrcture.Repositories.Base;
+
+using System.Reflection;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Ordering.Api
 {
@@ -31,11 +37,14 @@ namespace Ordering.Api
 
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddScoped(typeof(IOrderRepository), typeof(OrderRepository));
-            //            builder.Services.AddTransient<IOrderRepository, OrderRepository>();
+            builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            //            builder.Services.AddMediatR(typeof(CheckOutOrderHandle).GetTypeInfo().Assembly);
+            builder.Services.AddMediatR(typeof(CheckoutOrderHandler).GetTypeInfo().Assembly);
+
+            //builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+
             builder.Services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "order api", Version = "v1" });
@@ -59,6 +68,23 @@ namespace Ordering.Api
             //}
             //);
             //services.AddSingleton<EventBusRabbitMQConsumer>();
+
+            /* seed DB */
+
+            var services = builder.Services;
+            var serviceProvider = services.BuildServiceProvider();
+            var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
+            var orderContext = serviceProvider.GetRequiredService<OrderContext>();
+
+            try
+            {
+                OrderContextSeed.SeedAsync(orderContext, loggerFactory);
+            }
+            catch (Exception exception)
+            {
+                var logger = loggerFactory.CreateLogger<Program>();
+                logger.LogError(exception.Message);
+            }
 
             var app = builder.Build();
 
