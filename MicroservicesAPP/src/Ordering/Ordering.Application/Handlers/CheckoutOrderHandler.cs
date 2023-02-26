@@ -16,10 +16,15 @@ namespace Ordering.Application.Handlers
     {
         private readonly IOrderRepository _repository;
 
+        public CheckoutOrderHandler(IOrderRepository oderRepository)
+        {
+            this._repository = oderRepository ?? throw new ArgumentNullException(nameof(oderRepository));
+        }
+
         public async Task<OrderResponse> Handle(CheckoutOrderCommand request, CancellationToken cancellationToken)
         {
             var order = OrderMapper.Mapper.Map<Order>(request);
-            var new_order = _repository.AddAsync(order);
+            var new_order = _repository.AddAsync(order).Result;
 
             return OrderMapper.Mapper.Map<OrderResponse>(new_order);
         }

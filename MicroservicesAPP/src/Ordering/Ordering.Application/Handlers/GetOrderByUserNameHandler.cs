@@ -22,7 +22,7 @@ namespace Ordering.Application.Handlers
 
         public async Task<IEnumerable<OrderResponse>> Handle(GetOrderByUserNameQuery request, CancellationToken cancellationToken)
         {
-            var orders = _repository.GetOrderByUserName(request.UserName);
+            var orders = _repository.GetOrderByUserName(request.UserName).Result;
             var response = OrderMapper.Mapper.Map<IEnumerable<OrderResponse>>(orders);
             return response;
         }

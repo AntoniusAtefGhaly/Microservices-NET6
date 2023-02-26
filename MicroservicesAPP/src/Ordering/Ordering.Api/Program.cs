@@ -40,9 +40,12 @@ namespace Ordering.Api
             builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            //builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CheckoutOrderHandler).GetTypeInfo().Assembly));
 
-            builder.Services.AddMediatR(typeof(CheckoutOrderHandler).GetTypeInfo().Assembly);
-
+            // builder.Services.AddMediatR(typeof(CheckoutOrderHandler).GetTypeInfo().Assembly);
+            //builder.services.AddMediatR(typeof(CheckoutOrderHandler).GetTypeInfo().Assembly);
+            //builder.Services.AddMediatR(typeof(CheckoutOrderHandler).GetTypeInfo().Assembly);
             //builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
             builder.Services.AddSwaggerGen(c =>
