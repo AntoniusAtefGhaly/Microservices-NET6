@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Events.EventBusRabbitMQ;
+using EventBusRabbitMQ.Events;
 using Ordering.Application.Commands;
 using System;
 using System.Collections.Generic;
@@ -10,9 +10,9 @@ namespace Ordering.Api.Mapping
 {
     public class OrderMapping : Profile
     {
-        public  OrderMapping()
+        public OrderMapping()
         {
-            CreateMap<BasketCheckOutEvent, CheckOutOrderCommand>().ReverseMap();
+            CreateMap<BasketCheckoutEvent, CheckoutOrderCommand>().ReverseMap();
         }
     }
 }

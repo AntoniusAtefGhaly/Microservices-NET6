@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Ordering.Api.Extensions;
 using Ordering.Api.RabitMQ;
 using Ordering.Application.Handlers;
 using Ordering.Core.Repositories;
@@ -104,6 +105,7 @@ namespace Ordering.Api
 
             app.MapControllers();
 
+            app.UseRabitMQListner();
             app.Run();
         }
     }

@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\Basket.API.csproj": {}
+    "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\Basket.API.csproj": {}
   },
   "projects": {
-    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\Basket.API.csproj": {
+    "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\Basket.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\Basket.API.csproj",
+        "projectUniqueName": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\Basket.API.csproj",
         "projectName": "Basket.API",
-        "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\Basket.API.csproj",
-        "packagesPath": "C:\\Users\\Antonius\\.nuget\\packages\\",
-        "outputPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\obj\\",
+        "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\Basket.API.csproj",
+        "packagesPath": "C:\\Users\\AntoniusA\\.nuget\\packages\\",
+        "outputPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Basket\\Basket.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Antonius\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\AntoniusA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -28,8 +34,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
-                "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj"
+              "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
+                "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj"
               }
             }
           }
@@ -98,18 +104,24 @@
         }
       }
     },
-    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
+    "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+        "projectUniqueName": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
         "projectName": "EventBusRabbitMQ",
-        "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
-        "packagesPath": "C:\\Users\\Antonius\\.nuget\\packages\\",
-        "outputPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\obj\\",
+        "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+        "packagesPath": "C:\\Users\\AntoniusA\\.nuget\\packages\\",
+        "outputPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Antonius\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\AntoniusA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

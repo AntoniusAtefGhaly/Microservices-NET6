@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj": {}
+    "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj": {}
   },
   "projects": {
-    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
+    "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+        "projectUniqueName": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
         "projectName": "EventBusRabbitMQ",
-        "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
-        "packagesPath": "C:\\Users\\Antonius\\.nuget\\packages\\",
-        "outputPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\obj\\",
+        "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+        "packagesPath": "C:\\Users\\AntoniusA\\.nuget\\packages\\",
+        "outputPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Antonius\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\AntoniusA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -69,18 +75,24 @@
         }
       }
     },
-    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj": {
+    "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj",
+        "projectUniqueName": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj",
         "projectName": "Ordering.Api",
-        "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj",
-        "packagesPath": "C:\\Users\\Antonius\\.nuget\\packages\\",
-        "outputPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\obj\\",
+        "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\Ordering.Api.csproj",
+        "packagesPath": "C:\\Users\\AntoniusA\\.nuget\\packages\\",
+        "outputPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Antonius\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\AntoniusA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -93,14 +105,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
-                "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj"
+              "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
+                "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Common\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj"
               },
-              "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
-                "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj"
+              "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
+                "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj"
               },
-              "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj": {
-                "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj"
+              "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj": {
+                "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj"
               }
             }
           }
@@ -161,18 +173,24 @@
         }
       }
     },
-    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
+    "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
+        "projectUniqueName": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
         "projectName": "Ordering.Application",
-        "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
-        "packagesPath": "C:\\Users\\Antonius\\.nuget\\packages\\",
-        "outputPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\obj\\",
+        "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
+        "packagesPath": "C:\\Users\\AntoniusA\\.nuget\\packages\\",
+        "outputPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Antonius\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\AntoniusA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -185,8 +203,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj": {
-                "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj"
+              "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj": {
+                "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj"
               }
             }
           }
@@ -238,18 +256,24 @@
         }
       }
     },
-    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj": {
+    "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj",
+        "projectUniqueName": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj",
         "projectName": "Ordering.Core",
-        "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj",
-        "packagesPath": "C:\\Users\\Antonius\\.nuget\\packages\\",
-        "outputPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\obj\\",
+        "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj",
+        "packagesPath": "C:\\Users\\AntoniusA\\.nuget\\packages\\",
+        "outputPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Antonius\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\AntoniusA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -293,18 +317,24 @@
         }
       }
     },
-    "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj": {
+    "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj",
+        "projectUniqueName": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj",
         "projectName": "Ordering.Infrastrcture",
-        "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj",
-        "packagesPath": "C:\\Users\\Antonius\\.nuget\\packages\\",
-        "outputPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\obj\\",
+        "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\Ordering.Infrastrcture.csproj",
+        "packagesPath": "C:\\Users\\AntoniusA\\.nuget\\packages\\",
+        "outputPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Infrastrcture\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Antonius\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\AntoniusA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -317,8 +347,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj": {
-                "projectPath": "F:\\1.NET\\microservices\\Microservice-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj"
+              "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj": {
+                "projectPath": "D:\\training\\study\\Microservices-NET6\\MicroservicesAPP\\src\\Ordering\\Ordering.Core\\Ordering.Core.csproj"
               }
             }
           }
